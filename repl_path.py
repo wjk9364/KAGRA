@@ -18,8 +18,8 @@ else:
         else:   
                 date=str("{0}-0{1}-0{2}".format(year,month,day))
 
-path_FFL = '/data/kagra/home/kihyun.jung/Omicron/1daymkOmicron/'
-path_output = '/data/kagra/home/kihyun.jung/Omicron/K1/'
+path_FFL = # Cache path
+path_output = # Output path
 dv_1024 = 1
 dv_2048 = 6
 dv_16384 = 8
