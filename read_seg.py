@@ -29,9 +29,9 @@ else:
                 date=str("{0}-0{1}-0{2}".format(year,month,day))
 gps_s = int(os.popen("tconvert {0}".format(date)).read())
 gps_e = gps_s + 86400
-f = open("/data/kagra/home/chihiro.kozakai/K1Segments/DET_FOR_GRB200415A/K1-DET_FOR_GRB200415A_UTC_{0}.txt".format(date),'r')
+f = open("[Segment path]".format(date),'r')
 lines = f.readlines()
-tail = str(tailer.tail(open("/data/kagra/home/chihiro.kozakai/K1Segments/DET_FOR_GRB200415A/K1-DET_FOR_GRB200415A_UTC_{0}.txt".format(date)),1))
+tail = str(tailer.tail(open("[Segment path]".format(date)),1))
 tail = tail.strip("[]'")
 
 total = 0
@@ -55,7 +55,7 @@ for line in lines:
 f.close()
 g.close()
 
-f = open("/data/kagra/home/chihiro.kozakai/K1Segments/DET_FOR_GRB200415A/K1-DET_FOR_GRB200415A_UTC_{0}.txt".format(date),'r')
+f = open("[Segment path]".format(date),'r')
 
 lines = f.readlines()
 total = 0
