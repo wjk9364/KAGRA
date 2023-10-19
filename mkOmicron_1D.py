@@ -41,23 +41,18 @@ gwf_path2 = int(gpsend/100000)
 
 # ffl cache
 if gwf_path1 == gwf_path2:
-	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-gwf.ffl -p '/data/kagra/archive/data/full/{3}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1),shell=True)
-	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-DAC-gwf.ffl -p '/data/kagra/archive/data/proc/C20/O3GK/K1/{3}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1),shell=True)
+	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-gwf.ffl -p '{3}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1),shell=True)
+	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-DAC-gwf.ffl -p '{3}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1),shell=True)
 else:
-	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-gwf.ffl -p '/data/kagra/archive/data/full/{3}/*.gwf','/data/kagra/archive/data/full/{4}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1,gwf_path2),shell=True)
-	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-DAC-gwf.ffl -p '/data/kagra/archive/data/proc/C20/O3GK/K1/{3}/*.gwf','/data/kagra/archive/data/proc/C20/O3GK/K1/{4}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1,gwf_path2),shell=True)
-
-# lcf cache
-subprocess.call("python3.6 /data/kagra/home/kagradet/bin/ffl2lcf {0}-gwf.ffl".format(date),shell=True)
-subprocess.call("python3.6 /data/kagra/home/kagradet/bin/ffl2lcf {0}-DAC-gwf.ffl".format(date),shell=True)
-print("Cache file(.lcf, .ffl) is generated")
+	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-gwf.ffl -p '{3}/*.gwf','{4}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1,gwf_path2),shell=True)
+	subprocess.call("python3.6 mkcache_path2ffl.py -s {0} -e {1} -o {2}-DAC-gwf.ffl -p '{3}/*.gwf','{4}/*.gwf'".format(gpsstart,gpsend,date,gwf_path1,gwf_path2),shell=True)
 
 # Replacing PATH of parameter file
 subprocess.call("python3.6 repl_path.py {0} {1} {2}".format(year,month,day),shell=True)
 
 # Generate Omicron #
 dir_name = date
-dir_path = "/data/kagra/home/kihyun.jung/Omicron/K1/" + dir_name
+dir_path = # Output dieretory path
 if not os.path.exists(dir_path):
 	os.mkdir(dir_path)
 
