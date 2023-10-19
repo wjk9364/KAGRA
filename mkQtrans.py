@@ -28,7 +28,7 @@ else:
         else:
                 date=str("{0}-0{1}-0{2}".format(year,month,day))
 """
-subprocess.call("cp ../srhvev2/logs/hveto.out ./",shell=True)
+subprocess.call("cp [hveto output path]/hveto.out ./",shell=True)
 
 f = open('hveto.out','r')
 
@@ -38,7 +38,7 @@ ch_list = []
 get_nul = []
 nu_rw = 0
 duration = 4
-main_ch = 'K1:CAL-CS_PROC_DARM_STRAIN_DBL_DQ'
+main_ch = # Main channel name
 while line:
  line = line.strip('\n')
 
