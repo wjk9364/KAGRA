@@ -43,7 +43,7 @@ matplotlib.use('Agg')
 if not os.path.exists('./{0}'.format(date)):
  subprocess.call('mkdir {0}'.format(date),shell=True)
 # Read main cache
-gwf_cache = '/data/kagra/home/kihyun.jung/Omicron/1daymkOmicron/{0}-gwf.lcf'.format(date)
+gwf_cache = # Cache file path
 
 with open(gwf_cache, 'r') as fobj:
  cache = Cache.fromfile(fobj)
@@ -51,7 +51,7 @@ with open(gwf_cache, 'r') as fobj:
 ### Read Timeseries Data ###
  gst = time - dur/2
  get = time + dur/2
- com_ch1 = 'K1:PEM-ACC_EXC_CHAMBER_EXC_Z_OUT_DQ'
+ com_ch1 = # Aux channel name
  ch1 = TimeSeries.read(cache, com_ch1, start=gst, end=get, format='gwf.lalframe')
 
  f=open('chlist.txt','r')
